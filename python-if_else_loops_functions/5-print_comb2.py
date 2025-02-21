@@ -1,3 +1,6 @@
 #!/usr/bin/python3
-for i in range(0, 100):  # Loop through numbers 0 to 99
-    print("{} = 0x{:x}".format(i, i))  # Print number and its hexadecimal equivalent
+for i in range(100):
+    if i == 99:
+        print(f"{i:02d}")
+    else:
+        print(f"{i:02d}", end=", ")
