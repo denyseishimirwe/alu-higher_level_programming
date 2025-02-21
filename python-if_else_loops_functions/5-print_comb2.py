@@ -1,3 +1,4 @@
 #!/usr/bin/python3
-for i in range(0, 99):  # Loop from 0 to 98
-    print("{:02d}".format(i), end=", " if i < 98 else "\n")  # Print numbers with two digits
+for i in range(100):
+    # Print the number with two digits, adding a comma and space after each except the last one
+    print(f"{i:02}", end=", " if i < 99 else "\n")
