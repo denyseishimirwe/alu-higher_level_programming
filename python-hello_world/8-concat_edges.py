@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-str1 = "object"
-str2 = "-oriented"
-str3 = " programming"
-str4 = " with"
-str5 = " Python"
-
-print(str1 + str2 + str3 + str4 + str5)
+str = "object-oriented"
+str1 = "programming"
+str2 = "with Python"
+print(str + " " + str1 + " " + str2)
