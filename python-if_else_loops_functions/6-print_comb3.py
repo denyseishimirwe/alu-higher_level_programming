@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-
+ #!/usr/bin/python3
 def print_comb():
     for i in range(10):
         for j in range(i + 1, 10):
@@ -10,4 +9,3 @@ def print_comb():
                 print(f"{i}{j}", end=", ")
 
 print_comb()
-

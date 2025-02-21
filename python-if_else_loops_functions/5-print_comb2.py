@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-for i in range(100):
-    # Print the number with two digits, adding a comma and space after each except the last one
-    print(f"{i:02}", end=", " if i < 99 else "\n")
+for i in range(0, 100):  # Loop through numbers 0 to 99
+    print("{} = 0x{:x}".format(i, i))  # Print number and its hexadecimal equivalent
