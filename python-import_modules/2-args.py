@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def main():
     # Get the number of arguments
     arg_count = len(sys.argv) - 1  # Exclude the script name itself
@@ -16,6 +17,7 @@ def main():
     # Print each argument with its position
     for i in range(1, arg_count + 1):
         print(f"{i}: {sys.argv[i]}")
+
 
 # Ensure this code runs only when executed as a script
 if __name__ == "__main__":
