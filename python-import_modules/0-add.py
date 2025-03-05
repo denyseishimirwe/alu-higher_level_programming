@@ -13,7 +13,6 @@ def add(a, b):
     return (a + b)
 
 if __name__ == "__main__":
-    # Test case (only runs when executed directly)
     a = 1
     b = 2
-    print(f"{a} + {b} = {add(a, b)}")
+    print("{} + {} = {}".format(a, b, add(a, b)))  # One print function with .format()
