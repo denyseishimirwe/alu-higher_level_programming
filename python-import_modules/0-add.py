@@ -1,10 +1,19 @@
 #!/usr/bin/python3
 
-from add_0 import add  # Import the function (using add_0 only once)
+def add(a, b):
+    """My addition function
 
-a = 1  # Assigning value to 'a'
-b = 2  # Assigning value to 'b'
+    Args:
+        a: first integer
+        b: second integer
 
-# Single print function with string formatting
-print("{} + {} = {}".format(a, b, add(a, b)))
+    Returns:
+        The return value. a + b
+    """
+    return (a + b)
 
+if __name__ == "__main__":
+    # Test case (only runs when executed directly)
+    a = 1
+    b = 2
+    print(f"{a} + {b} = {add(a, b)}")
