@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
-from add_0 import add  # Import the function add from add_0
+from add_0 import add  # Import the function (using add_0 only once)
 
-a = 1  # Assign 1 to variable a
-b = 2  # Assign 2 to variable b
+a = 1  # Assigning value to 'a'
+b = 2  # Assigning value to 'b'
 
-# Print the result in the required format
+# Single print function with string formatting
 print("{} + {} = {}".format(a, b, add(a, b)))
+
