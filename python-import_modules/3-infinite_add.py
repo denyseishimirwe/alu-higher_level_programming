@@ -1,20 +1,19 @@
 #!/usr/bin/python3
+
 import sys
 
-
-# Main function to handle the logic
 def main():
-    # Get the arguments from the command line (excluding the script name)
-    arguments = sys.argv[1:]
-
-    # If there are arguments, sum them up
-    if arguments:
-        total = sum(int(arg) for arg in arguments)  # Sum of all arguments after converting them to integers
+    num_args = len(sys.argv) - 1  # Count the number of arguments (excluding the script name)
+    
+    if num_args == 0:
+        print("0 arguments.")
+    elif num_args == 1:
+        print("1 argument:")
     else:
-        total = 0  # If no arguments, the sum is 0
+        print(f"{num_args} arguments:")
+    
+    for i in range(1, num_args + 1):
+        print(f"{i}: {sys.argv[i]}")
 
-    print(total)
-
-# Ensure this code runs only when executed as a script
 if __name__ == "__main__":
     main()
