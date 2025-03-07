@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 
-
 """
-Module for defining a Rectangle class.
+This module defines a class called Rectangle.
+such as width, height, and methods to calculate area, perimeter, etc.
 """
 
 
 class Rectangle:
     """
-    Class representing a rectangle.    
-    This class does not define any properties or methods yet.
-    It serves as a basic template for further expansion.
+    This class defines a rectangle.
+
+    It currently has no attributes or methods. This class is a placeholder for
+    defining a rectangle. In future implementations, it can be extended with
     """
     pass
