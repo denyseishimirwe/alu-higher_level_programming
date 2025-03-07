@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 """
 This module defines a Square class that represents a square shape with a private 
 size attribute. It includes methods for object instantiation and controlled 
