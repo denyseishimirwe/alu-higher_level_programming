@@ -7,8 +7,7 @@ Defines a Square class with size validation and area calculation.
 
 
 class Square:
-    """Square class with size validation and area calculation"""
-    
+    """Square class with size validation and area calculation"""    
     def __init__(self, size=0):
         self.size = size
 
