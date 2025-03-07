@@ -2,7 +2,7 @@
 
 
 """
-Module to define a Square class with size validation, getter and setter, and area computation.
+"Defines a Square class with size validation and area calculation."
 """
 
 
