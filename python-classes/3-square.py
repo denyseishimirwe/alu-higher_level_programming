@@ -7,7 +7,7 @@ Module to define a Square class with size validation and area computation.
 
 
 class Square:
-    """Class representing a square with size validation and area calculation."""
+    """Class that represents that square."""
 
     def __init__(self, size=0):
         if not isinstance(size, int):
