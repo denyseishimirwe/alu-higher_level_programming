@@ -2,14 +2,12 @@
 
 
 """
-Module defining a Square class with methods to set size, calculate area, 
-and print the square with '#' characters.
+Module to define a Square class with size validation, getter and setter, and area computation.
 """
 
 
 class Square:
-    """Square class with size validation and area calculation"""
-    
+    """Square class with size validation and area calculation""" 
     def __init__(self, size=0):
         self.size = size
 
