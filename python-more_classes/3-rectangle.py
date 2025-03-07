@@ -1,29 +1,27 @@
 #!/usr/bin/python3
 
-
-"""
-A class to represent a rectangle.
-
-Attributes:
-    width (int): The width of the rectangle.
-    height (int): The height of the rectangle.
-
-Methods:
-    area(): Returns the area of the rectangle.
-    perimeter(): Returns the perimeter of the rectangle.
-    __str__(): Returns a string representation of the rectangle as a grid of '#' characters.
-    __repr__(): Returns a string that represents the rectangle object.
-"""
-
-
 class Rectangle:
+    """
+    A class to represent a rectangle.
+
+    Attributes:
+        width (int): The width of the rectangle.
+        height (int): The height of the rectangle.
+
+    Methods:
+        area(): Returns the area of the rectangle.
+        perimeter(): Returns the perimeter of the rectangle.
+        __str__(): Returns a string representation of the rectangle using the '#' character.
+        __repr__(): Returns a string representation of the rectangle object with its memory address.
+    """
+
     def __init__(self, width=0, height=0):
         """
-        Initializes a new Rectangle instance.
+        Initialize the rectangle with width and height.
 
         Args:
-            width (int, optional): The width of the rectangle (default is 0).
-            height (int, optional): The height of the rectangle (default is 0).
+            width (int, optional): The width of the rectangle. Defaults to 0.
+            height (int, optional): The height of the rectangle. Defaults to 0.
         """
         self.width = width
         self.height = height
@@ -31,20 +29,20 @@ class Rectangle:
     @property
     def width(self):
         """
-        Gets the width of the rectangle.
-
+        Get the width of the rectangle.
+        
         Returns:
             int: The width of the rectangle.
         """
-        return self._width
+        return self.__width
 
     @width.setter
     def width(self, value):
         """
-        Sets the width of the rectangle.
+        Set the width of the rectangle.
 
         Args:
-            value (int): The width to set.
+            value (int): The value to set as the width.
 
         Raises:
             TypeError: If the width is not an integer.
@@ -54,25 +52,25 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self._width = value
+        self.__width = value
 
     @property
     def height(self):
         """
-        Gets the height of the rectangle.
-
+        Get the height of the rectangle.
+        
         Returns:
             int: The height of the rectangle.
         """
-        return self._height
+        return self.__height
 
     @height.setter
     def height(self, value):
         """
-        Sets the height of the rectangle.
+        Set the height of the rectangle.
 
         Args:
-            value (int): The height to set.
+            value (int): The value to set as the height.
 
         Raises:
             TypeError: If the height is not an integer.
@@ -82,64 +80,45 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self._height = value
+        self.__height = value
 
     def area(self):
         """
-        Calculates the area of the rectangle.
-
+        Calculate and return the area of the rectangle.
+        
         Returns:
-            int: The area of the rectangle (width * height).
+            int: The area of the rectangle.
         """
-        return self._width * self._height
+        return self.__width * self.__height
 
     def perimeter(self):
         """
-        Calculates the perimeter of the rectangle.
+        Calculate and return the perimeter of the rectangle.
 
         Returns:
-            int: The perimeter of the rectangle (2 * (width + height)).
-            If either width or height is 0, returns 0.
+            int: The perimeter of the rectangle. If width or height is 0, returns 0.
         """
-        if self._width == 0 or self._height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
-        return 2 * (self._width + self._height)
+        return 2 * (self.__width + self.__height)
 
     def __str__(self):
         """
-        Returns a string representation of the rectangle as a grid of '#' characters.
+        Return a string representation of the rectangle using the '#' character.
 
         Returns:
-            str: A string of '#' characters representing the rectangle.
-            If width or height is 0, returns an empty string.
+            str: The rectangle represented by the '#' character, or an empty string if either
+                 the width or height is 0.
         """
-        if self._width == 0 or self._height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join(["#" * self._width] * self._height)
+        return "\n".join(["#" * self.__width] * self.__height)
 
     def __repr__(self):
         """
-        Returns a string that represents the rectangle object.
+        Return a string representation of the rectangle object, including its memory address.
 
         Returns:
-            str: The official string representation of the rectangle.
+            str: A string representation of the rectangle object.
         """
-        return f"Rectangle({self._width}, {self._height})"
-
-
-# Test the Rectangle class
-if __name__ == "__main__":
-    my_rectangle = Rectangle(2, 4)
-    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
-
-    # Test the string representation
-    print(str(my_rectangle))   # Should print the rectangle as grid of '#' characters
-    print(repr(my_rectangle))  # Should show the official string representation of the object
-
-    print("--")
-
-    # Modify the rectangle's attributes and test again
-    my_rectangle.width = 10
-    my_rectangle.height = 3
-    print(my_rectangle)  # Should print a new rectangle with updated dimensions
-    print(repr(my_rectangle))  # Should show the updated official representation
+        return f"<{self.__class__.__name__} object at {hex(id(self))}>"
