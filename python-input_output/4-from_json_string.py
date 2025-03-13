@@ -5,7 +5,7 @@
 This module contains a function to return the Python object representation
 from a JSON string.
 
-The function `from_json_string(my_str)` uses the `json.loads()` method to 
+The function `from_json_string(my_str)` uses the `json.loads()` method to
 deserialize a JSON string into a Python object.
 
 Author: Denyse Ishimirwe
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     print(type(my_list))
 
     s_my_dict = """
-    {"is_active": true, "info": {"age": 36, "average": 3.14}, 
+    {"is_active": true, "info": {"age": 36, "average": 3.14},
     "id": 12, "name": "John", "places": ["San Francisco", "Tokyo"]}
     """
     my_dict = from_json_string(s_my_dict)
