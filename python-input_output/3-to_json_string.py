@@ -1,31 +1,55 @@
 #!/usr/bin/python3
 
 
+"""
+This module contains a function to return the JSON string representation
+of an object.
+
+The function `to_json_string(my_obj)` uses the `json.dumps()` method to
+serialize a Python object into a JSON string.
+
+Author: Denyse Ishimirwe
+"""
+
 import json
-"""
-Module to convert Python objects to JSON strings.
-
-This module contains a function `to_json_string` that serializes Python
-objects into JSON strings. If the object cannot be serialized, an error
-message is returned indicating the type of error encountered.
-
-Usage:
-    - `to_json_string(my_obj)` - Converts a Python object `my_obj` into its
-      JSON string representation.
-"""
 
 
 def to_json_string(my_obj):
     """
-    Convert a Python object to its JSON string representation.
+    Returns the JSON string representation of an object (my_obj).
     Args:
-        my_obj: The Python object to be serialized into a JSON string.    
+        my_obj: The Python object to be converted to a JSON string.
     Returns:
-        A JSON string representation of the input object. If the object
-        cannot be serialized, returns an error message in the format
-        '[ErrorType] error_message'.
+        str: The JSON string representation of the object.
     """
+    return json.dumps(my_obj)
+
+
+if __name__ == "__main__":
+    # Test cases
+    my_list = [1, 2, 3]
+    s_my_list = to_json_string(my_list)
+    print(s_my_list)
+    print(type(s_my_list))
+
+    my_dict = { 
+        'id': 12,
+        'name': "John",
+        'places': [ "San Francisco", "Tokyo" ],
+        'is_active': True,
+        'info': {
+            'age': 36,
+            'average': 3.14
+        }
+    }
+    s_my_dict = to_json_string(my_dict)
+    print(s_my_dict)
+    print(type(s_my_dict))
+
     try:
-        return json.dumps(my_obj)
-    except (TypeError, ValueError) as e:
-        return f"[{e.__class__.__name__}] {e}"
+        my_set = { 132, 3 }
+        s_my_set = to_json_string(my_set)
+        print(s_my_set)
+        print(type(s_my_set))
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
