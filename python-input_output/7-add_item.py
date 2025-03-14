@@ -13,7 +13,7 @@ If the file does not exist, it will be created with an empty list.
 """
 
 import sys
-from os.path import exists
+import os
 
 # Importing save and load functions from external modules
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
@@ -22,7 +22,7 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 filename = "add_item.json"
 
 # Load existing data if the file exists, otherwise start with an empty list
-if exists(filename):
+if os.path.isfile(filename):
     items = load_from_json_file(filename)
 else:
     items = []
@@ -30,5 +30,5 @@ else:
 # Add all command-line arguments to the list (excluding the script name)
 items.extend(sys.argv[1:])
 
-# Save the updated li
-
+# Save the updated list to the JSON file
+save_to_json_file(items, filename)
