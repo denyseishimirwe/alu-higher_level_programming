@@ -21,6 +21,7 @@ class MyClass:
     def __str__(self):
         return "[MyClass] {} - {:d}".format(self.name, self.number)
 
+
 def class_to_json(obj):
     """Return the dictionary description for JSON serialization"""
     return {key: value for key, value in obj.__dict__.items()
