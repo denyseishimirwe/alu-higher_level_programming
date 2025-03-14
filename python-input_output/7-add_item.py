@@ -2,29 +2,33 @@
 
 
 """
-This script adds all command-line arguments to a Python list and saves them 
-to a file named 'add_item.json'.
+This script adds all command-line arguments to a Python list and saves them to a file.
+The list is stored in a JSON representation in a file named "add_item.json".
 
-It uses the `save_to_json_file` function from the module 5-save_to_json_file.py 
-to save the list and `load_from_json_file` from 6-load_from_json_file.py to load 
-the existing list from the file if it exists.
+Functions:
+    - Uses save_to_json_file from 5-save_to_json_file.py to save the list to a file.
+    - Uses load_from_json_file from 6-load_from_json_file.py to load the list from a file.
+
+If the file does not exist, it will be created with an empty list.
 """
 
-from sys import argv
-from 5-save_to_json_file import save_to_json_file
-from 6-load_from_json_file import load_from_json_file
+import sys
+from os.path import exists
+
+# Importing save and load functions from external modules
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 filename = "add_item.json"
 
-# Try to load the existing list, or initialize an empty list if the file doesn't exist
-try:
-    current_list = load_from_json_file(filename)
-except FileNotFoundError:
-    current_list = []
+# Load existing data if the file exists, otherwise start with an empty list
+if exists(filename):
+    items = load_from_json_file(filename)
+else:
+    items = []
 
-# Add all arguments (except the script name) to the list
-current_list.extend(argv[1:])
+# Add all command-line arguments to the list (excluding the script name)
+items.extend(sys.argv[1:])
 
-# Save the updated list to the file
-save_to_json_file(current_list, filename)
+# Save the updated li
 
