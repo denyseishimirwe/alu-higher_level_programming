@@ -1,8 +1,4 @@
--- Creating multiple databases
-CREATE DATABASE database1;
-CREATE DATABASE database2;
-CREATE DATABASE database3;
+-- This script lists all databases on the MySQL server
 
--- Show all databases after creation, sorted
-SHOW DATABASES
-ORDER BY Database;
+-- Show all databases
+SHOW DATABASES;
