@@ -2,12 +2,12 @@
 
 
 """
-This script adds all command-line arguments to a Python list and saves them to a file.
+This script adds command-line arguments to a Python list and saves it.
 The list is stored in a JSON representation in a file named "add_item.json".
 
 Functions:
-    - Uses save_to_json_file from 5-save_to_json_file.py to save the list to a file.
-    - Uses load_from_json_file from 6-load_from_json_file.py to load the list from a file.
+    - Saves list to a file using save_to_json_file from 5-save_to_json_file.py.
+    - Loads list using load_from_json_file from 6-load_from_json_file.py.
 
 If the file does not exist, it will be created with an empty list.
 """
