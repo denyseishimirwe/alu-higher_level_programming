@@ -1,17 +1,8 @@
-#!/bin/bash
-# This script runs the SQL query to list all databases
+-- Creating multiple databases
+CREATE DATABASE database1;
+CREATE DATABASE database2;
+CREATE DATABASE database3;
 
-# Show the initial databases
-echo "Correct output: initial databases sorted"
-mysql -hlocalhost -uroot -p < 0-list_databases.sql
-
-# Create multiple databases
-echo "Creating multiple databases..."
-mysql -hlocalhost -uroot -p -e "CREATE DATABASE db1;"
-mysql -hlocalhost -uroot -p -e "CREATE DATABASE db2;"
-mysql -hlocalhost -uroot -p -e "CREATE DATABASE db3;"
-
-# Show the databases after creation of new databases
-echo "Correct output: after creation of multiple databases"
-mysql -hlocalhost -uroot -p < 0-list_databases.sql
-
+-- Show all databases after creation, sorted
+SHOW DATABASES
+ORDER BY Database;
