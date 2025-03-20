@@ -1,3 +1,3 @@
 #!/bin/bash
-# This script sends a GET request to a URL and displays the response body
-curl -sL "$1" | sed -n '1p'
+# This script sends a GET request and displays the content length of the response body
+curl -sI "$1" | grep -i 'Content-Length' | awk '{print $2}'
