@@ -2,7 +2,7 @@
 
 
 """
-Fetches the status from a given URL using urllib with error handling.
+Fetches the status from a given URL using urllib with proper headers.
 """
 import urllib.request
 import urllib.error
@@ -10,8 +10,10 @@ import urllib.error
 
 def fetch_status(url):
     """Fetches and prints the status from the given URL, handling errors."""
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+    req = urllib.request.Request(url, headers=headers)
     try:
-        with urllib.request.urlopen(url) as response:
+        with urllib.request.urlopen(req) as response:
             body = response.read()
             print("Body response:")
             print("\t- type:", type(body))
