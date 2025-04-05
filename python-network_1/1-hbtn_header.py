@@ -2,14 +2,16 @@
 
 
 """
-Fetches a URL and displays the value of the X-Request-Id variable in the response header.
+Documentation
+Fetches data from the url using
+the urllib module in python.
 """
 import urllib.request
 import sys
 
 
 def fetch_x_request_id(url):
-    """Fetches the URL and prints the X-Request-Id from the response headers, if present."""
+    
     req = urllib.request.Request(url)
     try:
         with urllib.request.urlopen(req) as response:
